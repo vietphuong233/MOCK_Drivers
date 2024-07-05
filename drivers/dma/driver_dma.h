@@ -9,9 +9,7 @@
 /******************************************************************************
  * Definitions
  ******************************************************************************/
-/*! @brief eDMA transfer configuration
- * Implements : edma_transfer_size_t_Class
- */
+/* @brief DMA transfer size */
 typedef enum {
     DMA_TRANSFER_SIZE_1B  = 0x0U,
     DMA_TRANSFER_SIZE_2B  = 0x1U,
@@ -27,29 +25,23 @@ typedef struct _dma_channel_config
     edma_transfer_size_t destTransferSize;            /*!< Destination data transfer size. */
 } dma_channel_config_t;
 
-/* @brief DMA configuration structure. */
-typedef struct _dma_config
-{
-
-} dma_config_t;
 /******************************************************************************
  * API
  ******************************************************************************/
 /**
- * @brief Initializes the eDMA module.
+ * @brief Setting channel config for DMA.
  *
- * @param base DMA peripheral base address.
- * @param channelGroup Channel group index.
- * @param config Pointer to "dma_channel_config_t" structure.
+ * @param base     DMA peripheral base address.
+ * @param channel  Channel index.
+ * @param config   Pointer to "dma_channel_config_t" structure.
  */
 void DMA_DRV_SetChannelConfig(DMA_Type * base, uint32_t channel, const dma_channel_config_t *config);
 
 /**
  * @brief Starts an DMA channel.
  *
- * This function enables the DMA channel DMA request.
- *
- * @param virtualChannel DMA channel number.
+ * @param base DMA  peripheral base address.
+ * @param channel   DMA channel number.
  */
 static inline void DMA_DRV_StartChannel(DMA_Type * base, uint8_t channel)
 {

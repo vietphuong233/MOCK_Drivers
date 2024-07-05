@@ -48,9 +48,9 @@ typedef enum _trgmux_trigger_source
  *                    defined in \<SOC\>.h.
  */
 static inline void TRGMUX_DRV_SetTriggerSource(TRGMUX_Type *base,
-                                           uint32_t index,
-                                           trgmux_trigger_input_t input,
-                                           trgmux_trigger_source_t trigger_src)
+                                            uint32_t index,
+                                            trgmux_trigger_input_t input,
+                                            trgmux_trigger_source_t trigger_src)
 {
     switch (input)
     {

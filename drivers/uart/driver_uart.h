@@ -69,18 +69,18 @@ typedef struct _lpuart_config
  *  LPUART_Init(LPUART1, &lpuartConfig, 20000000U);
  * @endcode
  *
- * @param base LPUART peripheral base address.
- * @param config Pointer to a user-defined configuration structure.
- * @param srcClock_Hz LPUART clock source frequency in HZ.
+ * @param base         LPUART peripheral base address.
+ * @param config       Pointer to a user-defined configuration structure.
+ * @param srcClock_Hz  LPUART clock source frequency in HZ.
  */
 void LPUART_DRV_Init(LPUART_Type *base, const lpuart_config_t *config, uint32_t srcClock_Hz);
 
-/*!
+/**
  * @brief Deinitializes a LPUART instance.
  *
  * This function waits for transmit to complete, disables TX and RX, and disables the LPUART clock.
  *
- * @param base LPUART peripheral base address.
+ * @param base  LPUART peripheral base address.
  */
 void LPUART_DRV_Deinit(LPUART_Type *base);
 
@@ -90,8 +90,8 @@ void LPUART_DRV_Deinit(LPUART_Type *base);
  * This function writes data to the transmitter register directly. The upper layer must
  * ensure that the TX register is empty or that the TX FIFO has room before calling this function.
  *
- * @param base LPUART peripheral base address.
- * @param data Data write to the TX register.
+ * @param base  LPUART peripheral base address.
+ * @param data  Data write to the TX register.
  */
 static inline void LPUART_DRV_WriteByte(LPUART_Type *base, uint8_t data)
 {
@@ -106,7 +106,7 @@ static inline void LPUART_DRV_WriteByte(LPUART_Type *base, uint8_t data)
  * This function reads data from the receiver register directly. The upper layer must
  * ensure that the receiver register is full or that the RX FIFO has data before calling this function.
  *
- * @param base LPUART peripheral base address.
+ * @param base  LPUART peripheral base address.
  * @return Data read from data register.
  */
 static inline uint8_t LPUART_DRV_ReadByte(LPUART_Type *base)
@@ -118,11 +118,11 @@ static inline uint8_t LPUART_DRV_ReadByte(LPUART_Type *base)
  * @brief Writes to the transmitter register using a blocking method.
  *
  * This function polls the transmitter register, first waits for the register to be empty or TX FIFO to have room,
- * and writes data to the transmitter buffer, then waits for the dat to be sent out to the bus.
+ * and writes data to the transmitter buffer, then waits for the data to be sent out to the bus.
  *
- * @param base LPUART peripheral base address.
- * @param data Start address of the data to write.
- * @param length Size of the data to write.
+ * @param base    LPUART peripheral base address.
+ * @param data    Start address of the data to write.
+ * @param length  Size of the data to write.
  */
 void LPUART_DRV_WriteBlocking(LPUART_Type *base, const uint8_t *data, size_t length);
 

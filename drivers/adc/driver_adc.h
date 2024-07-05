@@ -81,17 +81,17 @@ typedef struct _adc_channel_config
 /**
  * @brief Initialize the ADC module.
  *
- * @param base ADC peripheral base address.
- * @param config Pointer to "adc12_config_t" structure.
+ * @param base    ADC peripheral base address.
+ * @param config  Pointer to "adc12_config_t" structure.
  */
 void ADC_DRV_Init(ADC_Type *base, const adc_config_t *config);
 
 /**
  * @brief Configure the conversion channel.
  *
- * @param base ADC peripheral base address.
- * @param channelGroup Channel group index.
- * @param config Pointer to "adc_channel_config_t" structure.
+ * @param base          ADC peripheral base address.
+ * @param channelGroup  Channel group index.
+ * @param config        Pointer to "adc_channel_config_t" structure.
  */
 void ADC_DRV_SetChannelConfig(ADC_Type *base, uint32_t channelGroup,
                              const adc_channel_config_t *config);
@@ -99,8 +99,8 @@ void ADC_DRV_SetChannelConfig(ADC_Type *base, uint32_t channelGroup,
 /**
  * @brief Get the conversion value.
  *
- * @param base ADC12 peripheral base address.
- * @param channelGroup Channel group index.
+ * @param base          ADC peripheral base address.
+ * @param channelGroup  Channel group index.
  *
  * @return Conversion value.
  */
@@ -113,8 +113,8 @@ ADC_DRV_GetChannelConversionValue(ADC_Type *base, uint32_t channelGroup)
 /**
  * @brief Enable or disable the hardware trigger mode.
  *
- * @param base   ADC peripheral base address.
- * @param enable "true" means to enable, "false" means not.
+ * @param base    ADC peripheral base address.
+ * @param enable  "true" means to enable, "false" means not.
  */
 static inline void ADC_DRV_EnableHardwareTrigger(ADC_Type *base, bool enable)
 {

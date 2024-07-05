@@ -10,8 +10,7 @@
  * Definitions
  ******************************************************************************/
 /**
- * @brief Peripheral clock name definition used for clock gate, clock source
- * and clock divider setting
+ * @brief DMAMUX channel source slot number
  */
 typedef enum _dmamux_source
 {
@@ -49,10 +48,11 @@ static inline void DMAMUX_DRV_ChannelDisable(DMAMUX_Type * base, uint8_t channel
 }
 
 /**
- * @brief Disables the DMA channel.
+ * @brief Select DMA channel source
  *
  * @param base DMAMUX peripheral base address.
  * @param channel Channel index.
+ * @param source trigger source index.
  */
 static inline void DMAMUX_DRV_ChannelSourceSelect(DMAMUX_Type * base,
                                                   uint8_t channel,

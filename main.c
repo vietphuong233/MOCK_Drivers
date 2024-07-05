@@ -167,7 +167,6 @@ void initSIM()
     SIM_DRV_ADC0option(&option);
 
     TRGMUX_DRV_SetTriggerSource(TRGMUX, TRGMUX_ADC0_INDEX, TRGMUX_TriggerInput0, TRGMUX_Source_LPIT_CH0);
-//    TRGMUX_DRV_SetTriggerSource(TRGMUX, TRGMUX_DMAMUX0_INDEX, TRGMUX_TriggerInput0, TRGMUX_Source_ADC0_SC1A);
 }
 
 void initDMA()
