@@ -38,18 +38,6 @@ typedef enum _lpuart_idle_type_select
     LPUART_IdleTypeStopBit  = 1U, /* Start counting after a stop bit. */
 } lpuart_idle_type_select_t;
 
-typedef enum _lpuart_idle_config
-{
-    LPUART_IdleCharacter1   = 0U, /* the number of idle characters. */
-    LPUART_IdleCharacter2   = 1U, /* the number of idle characters. */
-    LPUART_IdleCharacter4   = 2U, /* the number of idle characters. */
-    LPUART_IdleCharacter8   = 3U, /* the number of idle characters. */
-    LPUART_IdleCharacter16  = 4U, /* the number of idle characters. */
-    LPUART_IdleCharacter32  = 5U, /* the number of idle characters. */
-    LPUART_IdleCharacter64  = 6U, /* the number of idle characters. */
-    LPUART_IdleCharacter128 = 7U, /* the number of idle characters. */
-} lpuart_idle_config_t;
-
 /* @brief LPUART configuration structure. */
 typedef struct _lpuart_config
 {
@@ -84,8 +72,6 @@ typedef struct _lpuart_config
  * @param base LPUART peripheral base address.
  * @param config Pointer to a user-defined configuration structure.
  * @param srcClock_Hz LPUART clock source frequency in HZ.
- * @retval kStatus_LPUART_BaudrateNotSupport Baudrate is not support in current clock source.
- * @retval kStatus_Success LPUART initialize succeed
  */
 void LPUART_DRV_Init(LPUART_Type *base, const lpuart_config_t *config, uint32_t srcClock_Hz);
 
@@ -114,7 +100,7 @@ static inline void LPUART_DRV_WriteByte(LPUART_Type *base, uint8_t data)
     base->DATA = data;
 }
 
-/*!
+/**
  * @brief Reads the receiver register.
  *
  * This function reads data from the receiver register directly. The upper layer must

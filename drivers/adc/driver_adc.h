@@ -48,7 +48,7 @@ typedef enum _adc_resolution
 typedef enum _adc_trigger_type
 {
     ADC_TriggerTypeSoftware = 0U, /* Software trigger selected. */
-	ADC_TriggerTypeHardware = 1U, /* Hardware trigger selected. */
+    ADC_TriggerTypeHardware = 1U, /* Hardware trigger selected. */
 } adc_trigger_type_t;
 
 /* @brief Converter configuration. */
@@ -87,15 +87,14 @@ typedef struct _adc_channel_config
 void ADC_DRV_Init(ADC_Type *base, const adc_config_t *config);
 
 /**
- * @brief Get the conversion value.
+ * @brief Configure the conversion channel.
  *
  * @param base ADC peripheral base address.
  * @param channelGroup Channel group index.
- *
- * @return Conversion value.
+ * @param config Pointer to "adc_channel_config_t" structure.
  */
 void ADC_DRV_SetChannelConfig(ADC_Type *base, uint32_t channelGroup,
-                            const adc_channel_config_t *config);
+                             const adc_channel_config_t *config);
 
 /**
  * @brief Get the conversion value.

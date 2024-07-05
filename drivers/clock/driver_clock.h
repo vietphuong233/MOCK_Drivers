@@ -23,6 +23,7 @@ typedef enum _clock_ip_name
     CLOCK_ADC0    = PCC_ADC0_INDEX,
     CLOCK_LPUART1 = PCC_LPUART1_INDEX,
     CLOCK_LPIT    = PCC_LPIT_INDEX,
+    CLOCK_DMAMUX  = PCC_DMAMUX_INDEX,
 } clock_ip_name_t;
 
 /* @brief Clock source for peripherals that support various clock selections. */
